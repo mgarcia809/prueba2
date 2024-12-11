@@ -20,6 +20,22 @@ pipeline {
         }
       }
     }
+    stage('Compilar Proyecto') {
+            steps {
+                bat '''
+                dotnet build
+                '''
+            }
+        }
+
+        stage('Finalizar Análisis') {
+            steps {
+                withSonarQubeEnv(installationName: 'ServerSonarQube') {
+                    bat '''
+                    dotnet SonarScanner end /d:sonar.login="sqp_b7ff67a8a97d3c59ee065283d953fbd7b399175e"
+                    '''
+                }
+            }
     stage("Quality Gate") {
       steps {
         timeout(time: 2, unit: 'MINUTES') {

@@ -1,0 +1,11 @@
+﻿E:\Proyectos\VS 2022\PruebaJens\Program.cs
+E:\Proyectos\VS 2022\PruebaJens\WeatherForecast.cs
+E:\Proyectos\VS 2022\PruebaJens\obj\Debug\net8.0\Temperatura.GlobalUsings.g.cs
+E:\Proyectos\VS 2022\PruebaJens\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+E:\Proyectos\VS 2022\PruebaJens\obj\Debug\net8.0\Temperatura.AssemblyInfo.cs
+E:\Proyectos\VS 2022\PruebaJens\obj\Debug\net8.0\Temperatura.MvcApplicationPartsAssemblyInfo.cs
+E:\Proyectos\VS 2022\PruebaJens\.gitignore
+E:\Proyectos\VS 2022\PruebaJens\Jenkinsfile-2
+E:\Proyectos\VS 2022\PruebaJens\Temperatura.http
+E:\Proyectos\VS 2022\PruebaJens\Properties\launchSettings.json
+E:\Proyectos\VS 2022\PruebaJens\obj\Debug\net8.0\apphost.exe
