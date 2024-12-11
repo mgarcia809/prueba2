@@ -26,9 +26,8 @@ pipeline {
                 dotnet build
                 '''
             }
-        }
-
-        stage('Finalizar Análisis') {
+    }
+    stage('Finalizar Análisis') {
             steps {
                 withSonarQubeEnv(installationName: 'sq1') {
                     bat '''
@@ -36,6 +35,8 @@ pipeline {
                     '''
                 }
             }
+       }
+       
     stage("Quality Gate") {
       steps {
         timeout(time: 2, unit: 'MINUTES') {
