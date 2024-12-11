@@ -30,9 +30,9 @@ pipeline {
 
         stage('Finalizar Análisis') {
             steps {
-                withSonarQubeEnv(installationName: 'ServerSonarQube') {
+                withSonarQubeEnv(installationName: 'sq1') {
                     bat '''
-                    dotnet SonarScanner end /d:sonar.login="sqp_b7ff67a8a97d3c59ee065283d953fbd7b399175e"
+                    dotnet SonarScanner end /d:sonar.login="sqp_73aed91908426b131a92e721ca6bdaa0765db472"
                     '''
                 }
             }
