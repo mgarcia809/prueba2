@@ -1,5 +1,9 @@
 pipeline {
-  agent any
+    agent any
+    environment {
+        SONARQUBE_ENV = 'sq1' // Reemplaza con el nombre de tu servidor Sonar en Jenkins
+    }
+
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
