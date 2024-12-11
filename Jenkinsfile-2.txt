@@ -1,0 +1,27 @@
+pipeline {
+  agent any
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+  }
+  stages {
+    stage('Scan') {
+      steps {
+        withSonarQubeEnv(installationName: 'sq1') { 
+                        bat '''
+                        dotnet SonarScanner begin \
+                            /k:"APIAdministrativo" \
+                            /d:sonar.login="sqp_73aed91908426b131a92e721ca6bdaa0765db472" \
+                            /d:sonar.host.url=http://172.18.175.16:9000
+                        '''
+        }
+      }
+    }
+    stage("Quality Gate") {
+      steps {
+        timeout(time: 2, unit: 'MINUTES') {
+          waitForQualityGate abortPipeline: true
+        }
+      }
+    }
+  }
+}
