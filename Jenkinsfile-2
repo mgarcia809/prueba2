@@ -15,17 +15,19 @@ pipeline {
                         dotnet SonarScanner begin \
                             /k:"APIAdministrativo" \
                             /d:sonar.login="sqp_73aed91908426b131a92e721ca6bdaa0765db472" \
-                            /d:sonar.host.url=http://172.18.175.16:9000
+                            /d:sonar.host.url=http://172.18.175.16:9000 \d:sonar.scanner.scanAll=true
                         '''
         }
       }
     }
     stage('Compilar Proyecto') {
             steps {
+              withSonarQubeEnv(installationName: 'sq1') { 
                 bat '''
                 dotnet build
                 '''
             }
+	  }
         }
 
         stage('Finalizar Análisis') {
