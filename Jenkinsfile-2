@@ -27,7 +27,7 @@ pipeline {
                 '''
             }
     }
-    stage('Finalizar Análisis') {
+    stage('Finalizar Proceso') {
             steps {
                 withSonarQubeEnv(installationName: 'sq1') {
                     bat '''
